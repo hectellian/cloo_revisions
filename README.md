@@ -128,6 +128,25 @@ final int i = 12; //immutable
   - *mock implementation* ou *dommy object* en anglais, une fausse implementation pour les tests.
 
 - ATTENTION AU EXCES
+- Exceptions:
+  - **Throwable** 
+    - super type de toutes les exceptions et erreurs
+  - **Error**
+    - problèmes graves dus a l’env:
+      - manques de memoire
+      - bug dans la JVM
+      - etc…
+  - **Exceptions** 
+    - problèmes imprévisibles à gérer:
+      - problèmes d’IO
+      - time-out
+      - *thread* interrompu 
+  - **RuntimeException**
+    - liés à des erreurs de programmation:
+      - dépassement de tableau
+      - arg invalide
+      - erreur de conversion
+      - etc…
 
 ## Principe de substitution de Liskov
 
