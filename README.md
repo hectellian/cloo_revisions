@@ -131,17 +131,17 @@ var i = 12; // detection de type int
 ---
 
 - Déclaration de tableau:
+   - Taille fixe
+   - Init dans le tas (**heap**)
+   - x est une reference
+       - Similaire à un pointeur
+   - **Garbage-Collector** -> free la mémoire quand plus aucune références ne pointe sur un objet <=> `free()` en c
 
 ```java
 int[] x = new int[12]; // tab of size 12 int
 ```
 
-> - Tableau vide
-> - Taille fixe
-> - Init dans le tas (**heap**)
-> - x est une reference
->     - Similaire à un pointeur
-> - **Garbage-Collector** -> free la mémoire quand plus aucune références ne pointe sur un objet <=> `free()` en c
+> Tableau vide
 
 ---
 
