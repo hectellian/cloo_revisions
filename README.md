@@ -46,6 +46,17 @@ public int hashCode();
         - Repose sur appel à l'autre
         - Retourne des valeurs réparties sur `int`
 
+- **Value Object vs Entity** 
+    - 2 types de Objects:
+        - **Value Objects**: Definis par la valeur de leur champs
+          - si m valeurs => m objet 
+          - Egalite -> Toujours redefinir `equals`
+        - **Entity Objects**:
+          - Definis par la structure de leur champs
+          - m objet peut avoir des valeurs différentes au cours du temps
+          - Identite
+          - Gerer cycle de vie
+
 ## Lambda expressions
 
 ## Mutabilité et immutabilité
@@ -68,6 +79,32 @@ final int i = 12; //immutable
 ---
 
 ## Polymorphisme et interfaces
+
+- Polymorphisme
+  - Plusieurs comportements --> unique symbol
+    - ad-hoc -> surchage
+    - par sous-typage -> interface
+    - par parametricite
+
+- Interface
+  - Abstraction permettent d'exprimer des contraintes sur la presence de methode et signatures
+  - sous-typage
+  - forme de contract, analogue a un protocole de communication
+  - syntaxe similaire a une classe:
+    - methode abstraite -> non implémentée
+    - pas de champs
+    - pas de membres prives
+  - mot cle `implements`
+  - doit implementer toutes les méthodes abstraites
+  - **Limitations**:
+    - pas de constructeur abstrait -> il existe une *abstract factory*
+    - pas de champs abstraits
+
+- Fake It Till Make It:
+  - utilisation d'interface pour remplacer un composant pas encore ecrit
+  - *mock implementation* ou *dommy object* en anglais, une fausse implementation pour les tests.
+
+- ATTENTION AU EXCES
 
 ## Principe de substitution de Liskov
 
