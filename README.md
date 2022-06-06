@@ -32,10 +32,14 @@ public int hashCode();
 
 - **Identite**:
     - Opérateur == retourne vrai ssi les 2 refs pointent sur la m instance
+
+---
 - **Egalite**:
     - Methode `equals`
     - Par défaut -> m effet que identite
     - Redéfinition -> pour tester l'égalité entre valeurs
+
+---
 - **Code de hachage**:
     - Valeur numérique calc pour chaque instance
     - Si x.equals(y) => x.hashCode() = y.hashCode()
@@ -45,6 +49,8 @@ public int hashCode();
         - m champs que equals
         - Repose sur appel à l'autre
         - Retourne des valeurs réparties sur `int`
+
+---
 
 - **Value Object vs Entity** 
     - 2 types de Objects:
@@ -86,6 +92,8 @@ final int i = 12; //immutable
     - par sous-typage -> interface
     - par parametricite
 
+---
+
 - Interface
   - Abstraction permettent d'exprimer des contraintes sur la presence de methode et signatures
   - sous-typage
@@ -99,6 +107,8 @@ final int i = 12; //immutable
   - **Limitations**:
     - pas de constructeur abstrait -> il existe une *abstract factory*
     - pas de champs abstraits
+
+---
 
 - Fake It Till Make It:
   - utilisation d'interface pour remplacer un composant pas encore ecrit
@@ -144,10 +154,14 @@ int[] x = new int[12]; // tab of size 12 int
         - Plus testable
     - Inconvenient:
         - Plus difficile a optimiser
+
+---
 - Package:
     - Regrouper les classes
     - Espaces de noms (namespace) pour éviter les collisions
     - Hierarchique
+
+---
 - Classes et instances:
     - Definition: **Classe** -> type compose [JAVA]
         - **Instance** -> valeur d’une classe
@@ -156,25 +170,24 @@ int[] x = new int[12]; // tab of size 12 int
         - **Champ** -> variable membre
         - **Méthode** -> fonction membre
     - L’operateur . (point) permet d'accéder aux champs et méthodes d’une instance
-    - **Constructeur**:
+    -  **Constructeur**:
         - Construit l’instance
         - m nom que l’instance
         - Pas de return
         - Appelé après l’alloc de l’instance
+        - **Surcharge** -> plusieurs constructeurs
+        - Pas de constructeurs => un par défaut genere, vide
+    - Reference **`this`**
+        - Chaque instance a un accès vers elle m -> `this`
+        - Utilisation des membres localement cachés par autre variables
+        - Lisibilite
+        - Return instances de sois m
 
 ```java
 Point p = new Point(1.0, 0.5);
 ```
 
 ---
-
-- **Surcharge** -> plusieurs constructeurs
-- Pas de constructeurs => nu par défaut génère, vide
-- Reference **`this`**
-    - Chaque instance a un accès vers elle m -> `this`
-    - Utilisation des membres localement cachés par autre variables
-    - Lisibilite
-    - Return instances de sois m
 - Sémantique par référence:
     - S’applique toujours au instances
     - cf. voir tableaux exemples
