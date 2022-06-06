@@ -128,6 +128,9 @@ final int i = 12; //immutable
   - *mock implementation* ou *dommy object* en anglais, une fausse implementation pour les tests.
 
 - ATTENTION AU EXCES
+
+---
+ 
 - Exceptions:
   - **Throwable** 
     - super type de toutes les exceptions et erreurs
