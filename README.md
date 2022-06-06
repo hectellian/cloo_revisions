@@ -86,6 +86,19 @@ final int i = 12; //immutable
 
 ## Polymorphisme et interfaces
 
+- Sous-Typage:
+  - T <: U <=> Tout les type de T sont des types de U
+  - Si T <: U on peut assigner une valeur de type T à une ref de type U
+  - Relation **transitive**
+  - On peut assigner a une ref de type Object
+    - Compilateur perd la trace du sous-jacent
+  - Test du type sous-jacent d'une instance avec `instanceof` -> a l'execution
+  - Forcer la conversion d'un type a l'execution
+    - Erreur de compilation si <=/=>
+  > tout combiner avec `if` pour proteger la conversion
+
+---
+
 - Polymorphisme
   - Plusieurs comportements --> unique symbol
     - ad-hoc -> surchage
@@ -182,6 +195,10 @@ int[] x = new int[12]; // tab of size 12 int
         - Utilisation des membres localement cachés par autre variables
         - Lisibilite
         - Return instances de sois m
+    - JAVA: Toutes classes derivent d'une autre classe -> Object
+      - 2 effets de derivation
+          - sous-typage
+          - heritage
 
 ```java
 Point p = new Point(1.0, 0.5);
