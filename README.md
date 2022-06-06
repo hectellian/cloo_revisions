@@ -206,9 +206,8 @@ static type nom(parametres);
 ```
 
 > - Aussi appelé méthode de classes
-> - L’appel de la fonction copie les arguments
-
-- modification aucun effet en dehors de la fonction
+- L’appel de la fonction copie les arguments
+  - modification aucun effet en dehors de la fonction
 > Exemple pas a pas -> cours p.29-34
 
 ## Références, méthodes et mutabilité
@@ -227,7 +226,7 @@ static type nom(parametres);
         - `private` -> acces/utilisation uniquement par les instances de la m classe
         - `default` -> accès/utilisation uniquement dans le m package
         - `protected`
-- Recommendations:
+- **Recommendations**:
     - Tout champs -> `private`
     - Moins de méthode `public` possible
 - Accès lecture (**getter**) et écriture (**setter**) -> pratique **systématique déconseillées**:
