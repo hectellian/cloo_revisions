@@ -1,4 +1,4 @@
-# Généricité et variance
+# [$\leftarrow$](../README.md) Généricité et variance
 
 Apres avoir defini une simple classe, pendant l'appel d'une de ses methodes il est possible d'avoir un type different de celui voulu, il est donc
 necessaire de tester les instances pour etre sur d'avoir le bon type. Ceci rajoute enormement de code non necessaire et on peut ce perdre facilement.

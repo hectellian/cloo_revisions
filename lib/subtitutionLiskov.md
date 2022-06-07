@@ -1,4 +1,4 @@
-# Principe de substitution de Liskov
+# [$\leftarrow$](../README.md) Principe de substitution de Liskov
 
 Une relation _is-a_ entre 2 classes est **necessaire** mais pas **suffisante** pour que l'utilisation d'heritage soit coherante et sensee
 
