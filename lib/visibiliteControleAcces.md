@@ -1,4 +1,4 @@
-# [$\leftarrow$](../README.md) Visibilité et contrôle d'accès
+# Visibilité et contrôle d'accès
 
 Visibilite $\rightarrow$ propriété contextuel $\Rightarrow$ dépendante de l'endroit ou on se trouve. On peut voir certains attirbut a un endroit mais pas un autre
 

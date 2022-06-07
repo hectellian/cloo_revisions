@@ -1,4 +1,4 @@
-# [$\leftarrow$](../README.md) Héritage: redéfinition des méthodes
+# Héritage: redéfinition des méthodes
 
 $\rightarrow$ Mécanisme qui permet à une classe d’obtenir la structure et le comportement de la super classe
 

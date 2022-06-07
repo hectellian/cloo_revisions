@@ -1,4 +1,4 @@
-# [$\leftarrow$](../README.md) Héritage et aggrégation
+# Héritage et aggrégation
 
 La plupart des implementations d'heritage sont abstraite $\rightarrow$ mauvaise pratique
 

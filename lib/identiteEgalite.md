@@ -1,4 +1,4 @@
-# [$\leftarrow$](../README.md) Identité et Égalité
+# Identité et Égalité
 
 ## **Identite**
 

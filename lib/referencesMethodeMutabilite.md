@@ -1,4 +1,4 @@
-# [$\leftarrow$](../README.md) Références, méthodes et mutabilité
+# Références, méthodes et mutabilité
 
 - Considérer **immutabilité par défaut**
   - Plus simple a analyser

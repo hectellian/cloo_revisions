@@ -1,4 +1,4 @@
-# [$\leftarrow$](../README.md) Polymorphisme et interfaces
+# Polymorphisme et interfaces
 
 ## Sous-Typage
 

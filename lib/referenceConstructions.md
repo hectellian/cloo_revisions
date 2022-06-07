@@ -1,4 +1,4 @@
-# [$\leftarrow$](../README.md) Références et construction
+# Références et construction
 
 - Inference de type:
 - mot cle `var`

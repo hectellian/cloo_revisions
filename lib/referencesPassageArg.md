@@ -1,4 +1,4 @@
-# [$\leftarrow$](../README.md) Références et passage d'argument
+# Références et passage d'argument
 
 ## Fonctions
 

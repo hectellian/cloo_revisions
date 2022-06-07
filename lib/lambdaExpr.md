@@ -1,4 +1,4 @@
-# [$\leftarrow$](../README.md) Lambda Expressions
+# Lambda Expressions
 
 En *java*, il existe plusieurs objets annonymes, les *Lambda Expressions* et les *Classes Annonymes*.
 
@@ -105,7 +105,6 @@ Les deux fonctions font exactement la même chose, elles génèrent toute les de
 De plus, le mélange avec les *types générique* est particulièrement facile.
 
 Un autre point particulièrement utils des *lambda expressions* en *java* est que celles-ci se conforme aux *interfaces* demandé en paramètres pour différentes tels que les *stream* par exemple la méthode `map` d'un *stream* prend en paramètre une fonction ou la méthode `filter` prend en paramètre un *prédicat*.
-
 
 $\uparrow$
 
