@@ -25,7 +25,7 @@ Autre utilisation $\rightarrow$ Tableau dynamique:
 var l = new ArrayList<String>();
 ```
 
-## Héritage et agrégation
+## Héritage et aggrégation
 
 La plupart des implementations d'heritage sont abstraite $\rightarrow$ mauvaise pratique
 
@@ -42,6 +42,20 @@ class Foo extemds Bar { /*... */ }
 > - Foo sous-type de Bar
 > - Foo recupere une partie des membre de Bar
 
+---
+
+- ### **Aggregation**
+
+  - Membres d’une classe $\rightarrow$ aussi refs vers instances
+
+## Héritage et polymorphisme
+
+Un exemple classique est de parler d'un heritage structurel. Prenons par exemple l'exemple des systemes electroniques
+
+![exempleclassique](img/hexel.png)
+
+---
+
 ### Mauvais Exemple: Probleme de l'ellipse
 
 En geometrie, Circle $\rightarrow$ Ellipse
@@ -49,14 +63,22 @@ En geometrie, Circle $\rightarrow$ Ellipse
 Un cercle devrait est donc un sous type de la classe Elllipse
 
 - Probleme: le cercle herite des fonctions de modification de l'Ellipse qui modifie le Cercle comme une Ellipse
-
----
-
-- ### **Agregation**
-
-  - Membres d’une classe $\rightarrow$ aussi refs vers instances
-
-## Héritage et polymorphisme
+- Solutions (dans l'ordre du meilleur au pire):
+  - Pas d'heritage (immutabilite si possible)
+    - Avantage: Invariant decouples, Erreur de compilation au lieu d'exceptions, Generalisation a d'autres formes facile
+    - Desavantage: Pas de code en commun: plus de code
+  - Immutabilite
+    - Avantage: Invariants respectes, Erreur de compilation au lieu d'exceptions
+    - Desavantage: Immutable
+  - Pas de Cercle
+    - Avantages: Plus simple, Pas de surprise
+    - Desavantage: Plus de methode specialisee pour les cercles, Indistinguable a la compilation
+  - Exceptions
+    - Avantage: Invariant respecte
+    - Desavantages: Risque suplementaire d'exceptions a l'execution
+  - Changer la fonction probleme
+    - Avantage: Cerlce respecte
+    - Desavantages: la fonction ne fonction pas comme sont nom l'indique $\rightarrow$ surprise + moins d'**encapsulation**
 
 ## Héritage: redéfinition des méthodes
 
@@ -303,6 +325,10 @@ Viens alors le **principe de substitution de Liskov**:
 Definition de Barbara Liskov:
 
 - Soit $\phi$(x) une propriete prouvable a propos d'objets x de type T. Alors $\phi$(y) devrait etre vrai pour un objet y de type S ou S est un sous type de T
+
+Contrairement a l'intuiation, la relation de sout-typage (is-a) n'implique pas une compatibilite de structure, mais de **comportement** $\rightarrow$ ne pas penser en structure mais en comportement
+
+Le comportement depend du programme, donc la question de savoir si **Foo** est une sous classe de **Bar** ne peut etre tranchee sans avoir determine le comportement desire $\rightarrow$ seulement quand on connais le comportement exact on peut savoir si Foo est une sous classe de Bar
 
 ## Références et construction
 
