@@ -42,6 +42,16 @@ class Foo extemds Bar { /*... */ }
 > - Foo sous-type de Bar
 > - Foo recupere une partie des membre de Bar
 
+### Mauvais Exemple: Probleme de l'ellipse
+
+En geometrie, Circle $\rightarrow$ Ellipse
+
+Un cercle devrait est donc un sous type de la classe Elllipse
+
+- Probleme: le cercle herite des fonctions de modification de l'Ellipse qui modifie le Cercle comme une Ellipse
+
+---
+
 - ### **Agregation**
 
   - Membres d’une classe $\rightarrow$ aussi refs vers instances
@@ -52,7 +62,7 @@ class Foo extemds Bar { /*... */ }
 
 $\rightarrow$ Mécanisme qui permet à une classe d’obtenir la structure et le comportement de la super classe
 
-Toute classe $\rightarrow$ implémentation par défaut de plusieurs méthodes <- **Object class hérédité**:
+Toute classe $\rightarrow$ implémentation par défaut de plusieurs méthodes $\leftarrow$ **Object class hérédité**:
 
 ```java
 public String toString();
@@ -256,9 +266,43 @@ final int i = 12; //immutable
     - Utiliser le type retour
     - Ne pas utiliser pour la logique
 
+## Principe de substitution de Liskov
+
+Une relation _is-a_ entre 2 classes est **necessaire** mais pas **suffisante** pour que l'utilisation d'heritage soit coherante et sensee
+
+Avant tout, il est important de savoir ce qu'est la programmation par contrat
+
 ---
 
-## Principe de substitution de Liskov
+### Programmation par contrat
+
+Pour chaque operation, on peut definir des **contraintes**:
+
+- **Pre-conditions** : Contraintes qui doivent etre realisees _avant_ d'effectier l'operation
+  - Type des args $\rightarrow$ Java: compilateur
+  - Valeur des args $\rightarrow$ verifier les valeurs
+  - Etat de l'objet courant $\rightarrow$ ne pas pouvoir utiliser `write` sur un fichier fermé
+- **Post-conditions** : Contraintes qui doivent etre realise _apres_ avoir effectue l'operation
+  - Type de retour $\rightarrow$ Java compilateur
+  - Valeur de retour
+  - Etat de l'objet courant
+  - Etat des args
+- **Invariants** : contraintes toujours realisees. A la fois pre et post conditions
+  - Valeur de l'objet courant
+
+---
+
+Viens alors le **principe de substitution de Liskov**:
+
+- Si **S** est une sous classe de **T** $\rightarrow$ on doit pourvoir utiliser une instasnce **S** chaque fois qu'une instance de **T** est attendue, _sans causer de problemes_
+- Pour toute sous-classe:
+  - Les pre-conditions des methodes de la super classe ne peucent eter durcies
+  - Les post-conditions des methodes de la super classe ne peuvent etre assouplies
+  - Les invariants de la super classe doivent etre preserves tels quels
+
+Definition de Barbara Liskov:
+
+- Soit $\phi$(x) une propriete prouvable a propos d'objets x de type T. Alors $\phi$(y) devrait etre vrai pour un objet y de type S ou S est un sous type de T
 
 ## Références et construction
 
@@ -374,7 +418,7 @@ static type nom(parametres);
 
 ## Visibilité et contrôle d'accès
 
-visibilite $\rightarrow$ propriété contextuel $\Rightarrow$ dépendante de l'endroit ou on se trouve. On peut voir certains attirbut a un endroit mais pas un autre
+Visibilite $\rightarrow$ propriété contextuel $\Rightarrow$ dépendante de l'endroit ou on se trouve. On peut voir certains attirbut a un endroit mais pas un autre
 
 Contrôle d'accès $\rightarrow$ notion fortement liée à la visibilité $\Rightarrow$ ce qui ne peut pas etre vu, ne peut pas etre directement accedé
 
