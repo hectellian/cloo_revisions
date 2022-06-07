@@ -4,6 +4,27 @@
 
 ## Généricité et variance
 
+Apres avoir defini une simple classe, pendant l'appel d'une de ses methodes il est possible d'avoir un type different de celui voulu, il est donc
+necessaire de tester les instances pour etre sur d'avoir le bon type. Ceci rajoute enormement de code non necessaire et on peut ce perdre facilement.
+
+Viens alors les _generiques_ $\rightarrow$ rajoute une forme de polymorphisme par parametricite permettant d'ajouter un objet d'un certain type
+
+Definition d'une classe avec un generique en Java:
+
+```java
+public class Stack<T> { // T n'est connu que a la compilation
+...
+}
+// Creation d'une stack de strings
+Stack<String> stack = new Stack<String>();
+```
+
+Autre utilisation $\rightarrow$ Tableau dynamique:
+
+```java
+var l = new ArrayList<String>();
+```
+
 ## Héritage et agrégation
 
 - ### **Agregation**
@@ -48,11 +69,11 @@ public int hashCode();
 - ### **Code de hachage**
 
   - Valeur numérique calc pour chaque instance
-  - Si x.equals(y) $\Rightarrow$ x.hashCode() = y.hashCode()
+  - Si `x.equals(y)` $\Rightarrow$ `x.hashCode()` = `y.hashCode()`
   - Redefinition `equals` $\Rightarrow$ redefinition hashCode
   - **Criteres**:
     - Aussi rapide que possible
-    - m champs que equals
+    - m champs que `equals`
     - Repose sur appel à l'autre
     - Retourne des valeurs réparties sur `int`
 
@@ -166,8 +187,6 @@ final int i = 12; //immutable
       - erreur de conversion
       - etc…
 
----
-
 - ### Lever une exception:
 
   - Pourquoi? $\rightarrow$ Anticiper un probleme
@@ -193,6 +212,8 @@ final int i = 12; //immutable
     2. Capture d'exceptions produite $\rightarrow$ `catch`
     3. (Optionel) Code execute dans tous les cas a la fin $\rightarrow$ toujours execute
 
+---
+
 - ### Problemes des exceptions
 
   - Plein de code partout pour gerer
@@ -202,6 +223,10 @@ final int i = 12; //immutable
     - Anticiper le probleme
     - Utiliser le type retour
     - Ne pas utiliser pour la logique
+
+---
+
+
 
 ## Principe de substitution de Liskov
 
@@ -325,7 +350,7 @@ Contrôle d'accès $\rightarrow$ notion fortement liée à la visibilité $\Righ
 
 - ### Modificateurs d'accès
 
-  - il existe differents mots-clefs liés à la visibilité et à l'accès
+  - differents mots-clefs liés à la visibilité et à l'accès
   - Control d'accès des membres en Java:
     - `public` $\rightarrow$ accès/utilisation partout
     - `private` $\rightarrow$ acces/utilisation uniquement par les instances de la m classe
