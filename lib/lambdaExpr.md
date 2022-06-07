@@ -108,4 +108,4 @@ Un autre point particulièrement utils des *lambda expressions* en *java* est qu
 
 $\uparrow$
 
-Taken from [Ethan](https://github.com/dracoanguis/Objet-Oriente/blob/main/Preparation_Oral.md)
+Taken from [Ethan](https://github.com/dracoanguis/Objet-Oriente/blob/main/Preparation_Oral.md#expressions-lambdas)
