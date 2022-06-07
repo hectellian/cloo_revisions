@@ -15,7 +15,7 @@ Definition d'une classe avec un generique en Java:
 public class Stack<T> { // T n'est connu que a la compilation
 ...
 }
-// Creation d'une stack de strings
+// Declaration d'une stack de strings
 Stack<String> stack = new Stack<String>();
 ```
 
@@ -27,16 +27,32 @@ var l = new ArrayList<String>();
 
 ## Héritage et agrégation
 
+La plupart des implementations d'heritage sont abstraite $\rightarrow$ mauvaise pratique
+
+- ### Heritage
+
+  - extension d'une classe
+  - Java: mot cle `extends`
+  - Sous-Classe **herite** de tous les **membres** de sa Super-Classe qui ne sont **pas** `private`
+
+```java
+class Foo extemds Bar { /*... */ }
+```
+>
+> - Foo sous-type de Bar
+> - Foo recupere une partie des membre de Bar
+
 - ### **Agregation**
 
-  Membres d’une classe $\rightarrow$ aussi refs vers instances
+  - Membres d’une classe $\rightarrow$ aussi refs vers instances
 
 ## Héritage et polymorphisme
 
 ## Héritage: redéfinition des méthodes
 
-- Mécanisme qui permet à une classe d’obtenir la structure et le comportement de la super classe
-- Toute classe $\rightarrow$ implémentation par défaut de plusieurs méthodes <- **Object class hérédité**:
+$\rightarrow$ Mécanisme qui permet à une classe d’obtenir la structure et le comportement de la super classe
+
+Toute classe $\rightarrow$ implémentation par défaut de plusieurs méthodes <- **Object class hérédité**:
 
 ```java
 public String toString();
@@ -50,19 +66,31 @@ public boolean equals();
 public int hashCode();
 ```
 
+$\rightarrow$ On peut redefinir une methode heritee.
+
+Java:
+
+- La reference `super` $\rightarrow$ acceder au methodes de la super classe
+- Annotation `@Override` $\rightarrow$ redefinition d'un membre de la super classe
+  - optionnelle
+  - recommendé dans le cadre d'une extension de classe
+  - Inutile dans le cas d'une implementation d'interface
+
 ## Identité et Égalité
 
 - ### **Identite**
 
-  - Opérateur `==` retourne vrai ssi les 2 refs pointent sur la m instance
+  - 2 Objets sont **identique** $\iff$ physiquement le m, c-a-d pointer au m endroit, m case memoire (addresse pas valeur)
+  - Java: Opérateur `==` retourne vrai ssi les 2 refs pointent sur la m instance
 
 ---
 
 - ### **Egalite**
 
+  - 2 Obkjets sont **egaux** $\iff$ m valeurs
   - Methode `equals`
-  - Par défaut $\rightarrow$ m effet que identite
-  - Redéfinition $\rightarrow$ pour tester l'égalité entre valeurs
+    - Par défaut $\rightarrow$ m effet que identite
+    - Redéfinition $\rightarrow$ pour tester l'égalité entre valeurs
 
 ---
 
@@ -102,7 +130,11 @@ public int hashCode();
 int i = 12; // mutable
 ```
 
-Mot cle final $\rightarrow$ rendre immutable
+Mot cle `final`
+
+- Rendre une variable/reference **immutable**
+- Dans le cas d'une classe $\rightarrow$ ne peux pas etre etendue
+- Methode $\rightarrow$ ne peut pas etre redefinie
 
 ```java
 final int i = 12; //immutable
@@ -187,7 +219,7 @@ final int i = 12; //immutable
       - erreur de conversion
       - etc…
 
-- ### Lever une exception:
+- ### Lever une exception
 
   - Pourquoi? $\rightarrow$ Anticiper un probleme
   - Java $\rightarrow$ mot cle `throw` suivi d’une instanciation de l’exception
@@ -225,8 +257,6 @@ final int i = 12; //immutable
     - Ne pas utiliser pour la logique
 
 ---
-
-
 
 ## Principe de substitution de Liskov
 
