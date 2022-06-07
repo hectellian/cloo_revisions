@@ -47,6 +47,9 @@ class Foo extemds Bar { /*... */ }
 - ### **Aggregation**
 
   - Membres d’une classe $\rightarrow$ aussi refs vers instances
+  - Remplacer l'heritage pur
+    - Avoir une interface commune pour les differentes implementations $\rightarrow$ polymorphisme
+    - Encapsuler une instance de la classe dont on derive le comportement **aggregation** (ou composition)
 
 ## Héritage et polymorphisme
 
