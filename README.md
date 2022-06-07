@@ -8,14 +8,14 @@
 
 - ### **Agregation**
 
-  Membres d’une classe -> aussi refs vers instances
+  Membres d’une classe $\rightarrow$ aussi refs vers instances
 
 ## Héritage et polymorphisme
 
 ## Héritage: redéfinition des méthodes
 
 - Mécanisme qui permet à une classe d’obtenir la structure et le comportement de la super classe
-- Toute classe -> implémentation par défaut de plusieurs méthodes <- **Object class hérédité**:
+- Toute classe $\rightarrow$ implémentation par défaut de plusieurs méthodes <- **Object class hérédité**:
 
 ```java
 public String toString();
@@ -33,23 +33,23 @@ public int hashCode();
 
 - ### **Identite**
 
-  - Opérateur == retourne vrai ssi les 2 refs pointent sur la m instance
+  - Opérateur `==` retourne vrai ssi les 2 refs pointent sur la m instance
 
 ---
 
 - ### **Egalite**
 
   - Methode `equals`
-  - Par défaut -> m effet que identite
-  - Redéfinition -> pour tester l'égalité entre valeurs
+  - Par défaut $\rightarrow$ m effet que identite
+  - Redéfinition $\rightarrow$ pour tester l'égalité entre valeurs
 
 ---
 
 - ### **Code de hachage**
 
   - Valeur numérique calc pour chaque instance
-  - Si x.equals(y) => x.hashCode() = y.hashCode()
-  - Redefinition `equals` => redefinition hashCode
+  - Si x.equals(y) $\Rightarrow$ x.hashCode() = y.hashCode()
+  - Redefinition `equals` $\Rightarrow$ redefinition hashCode
   - **Criteres**:
     - Aussi rapide que possible
     - m champs que equals
@@ -62,8 +62,8 @@ public int hashCode();
 
   - 2 types de Objects:
     - **Value Objects**: Definis par la valeur de leur champs
-      - si m valeurs => m objet
-      - Egalite -> Toujours redefinir `equals`
+      - si m valeurs $\Rightarrow$ m objet
+      - Egalite $\rightarrow$ Toujours redefinir `equals`
     - **Entity Objects**:
       - Definis par la structure de leur champs
       - m objet peut avoir des valeurs différentes au cours du temps
@@ -74,14 +74,14 @@ public int hashCode();
 
 ## Mutabilité et immutabilité
 
-- **Par défaut** -> tout est **mutable** [JAVA]
+- **Par défaut** $\rightarrow$ tout est **mutable** [JAVA]
 - Variable:
 
 ```java
 int i = 12; // mutable
 ```
 
-Mot cle final -> rendre immutable
+Mot cle final $\rightarrow$ rendre immutable
 
 ```java
 final int i = 12; //immutable
@@ -95,23 +95,23 @@ final int i = 12; //immutable
 
 - ### Sous-Typage
 
-  - T <: U <=> Tout les type de T sont des types de U
+  - T <: U <$\Rightarrow$ Tout les type de T sont des types de U
   - Si T <: U on peut assigner une valeur de type T à une ref de type U
   - Relation **transitive**
   - On peut assigner a une ref de type Object
     - Compilateur perd la trace du sous-jacent
-  - Test du type sous-jacent d'une instance avec `instanceof` -> a l'execution
+  - Test du type sous-jacent d'une instance avec `instanceof` $\rightarrow$ a l'execution
   - Forcer la conversion d'un type a l'execution
-    - Erreur de compilation si <=/=>
+    - Erreur de compilation si non $\iff$
       > tout combiner avec `if` pour proteger la conversion
 
 ---
 
 - ### Polymorphisme
 
-  - Plusieurs comportements --> unique symbol
-    - ad-hoc -> surchage
-    - par sous-typage -> interface
+  - Plusieurs comportements -$\rightarrow$ unique symbol
+    - ad-hoc $\rightarrow$ surchage
+    - par sous-typage $\rightarrow$ interface
     - par parametricite
 
 ---
@@ -122,13 +122,13 @@ final int i = 12; //immutable
   - sous-typage
   - forme de contract, analogue a un protocole de communication
   - syntaxe similaire a une classe:
-    - methode abstraite -> non implémentée
+    - methode abstraite $\rightarrow$ non implémentée
     - pas de champs
     - pas de membres prives
   - mot cle `implements`
   - doit implementer toutes les méthodes abstraites
   - **Limitations**:
-    - pas de constructeur abstrait -> il existe une _abstract factory_
+    - pas de constructeur abstrait $\rightarrow$ il existe une _abstract factory_
     - pas de champs abstraits
 
 ---
@@ -170,10 +170,10 @@ final int i = 12; //immutable
 
 - ### Lever une exception:
 
-  - Pourquoi? -> Anticiper un probleme
-  - Java -> mot cle `throw` suivi d’une instanciation de l’exception
+  - Pourquoi? $\rightarrow$ Anticiper un probleme
+  - Java $\rightarrow$ mot cle `throw` suivi d’une instanciation de l’exception
 
-- Important de creer un gestionnaire -> dependace a des choses que l'on ne peut pas controler
+- Important de creer un gestionnaire $\rightarrow$ dependace a des choses que l'on ne peut pas controler
 
 - ### Gerer une exception (different comportements)
 
@@ -189,9 +189,19 @@ final int i = 12; //immutable
 
   - 3 parties:
   
-    1. Tentative d'execution de code -> `try`
+    1. Tentative d'execution de code $\rightarrow$ `try`
     2. Capture d'exceptions produite $\rightarrow$ `catch`
     3. (Optionel) Code execute dans tous les cas a la fin $\rightarrow$ toujours execute
+
+- ### Problemes des exceptions
+
+  - Plein de code partout pour gerer
+  - Exception non attrapée $\rightarrow$ propagation et donc problemes
+  - Comment faire?
+    - Utiliser exceptionnellement
+    - Anticiper le probleme
+    - Utiliser le type retour
+    - Ne pas utiliser pour la logique
 
 ## Principe de substitution de Liskov
 
@@ -199,7 +209,7 @@ final int i = 12; //immutable
 
 - Inference de type:
 - mot cle `var`
-- privilegier la lisibilite -> **pas abuser**
+- privilegier la lisibilite $\rightarrow$ **pas abuser**
 
 ```java
 var i = 12; // detection de type int
@@ -213,7 +223,7 @@ var i = 12; // detection de type int
   - Init dans le tas (**heap**)
   - x est une reference
     - Similaire à un pointeur
-  - **Garbage-Collector** -> free la mémoire quand plus aucune références ne pointe sur un objet <=> `free()` en c
+  - **Garbage-Collector** $\rightarrow$ free la mémoire quand plus aucune références ne pointe sur un objet <$\Rightarrow$ `free()` en c
 
 ```java
 int[] x = new int[12]; // tab of size 12 int
@@ -246,26 +256,26 @@ int[] x = new int[12]; // tab of size 12 int
 
 - ### Classes et instances
 
-  - Definition: **Classe** -> type compose [JAVA]
-    - **Instance** -> valeur d’une classe
-    - **Objet** -> instance ou classe
-    - **Membre** -> variable ou fonction déclarées
-    - **Champ** -> variable membre
-    - **Méthode** -> fonction membre
+  - Definition: **Classe** $\rightarrow$ type compose [JAVA]
+    - **Instance** $\rightarrow$ valeur d’une classe
+    - **Objet** $\rightarrow$ instance ou classe
+    - **Membre** $\rightarrow$ variable ou fonction déclarées
+    - **Champ** $\rightarrow$ variable membre
+    - **Méthode** $\rightarrow$ fonction membre
   - L’operateur `.` (**point**) permet d'accéder aux champs et méthodes d’une instance
   - **Constructeur**:
     - Construit l’instance
     - m nom que l’instance
     - Pas de return
     - Appelé après l’alloc de l’instance
-    - **Surcharge** -> plusieurs constructeurs
-    - Pas de constructeurs => un par défaut genere, vide
+    - **Surcharge** $\rightarrow$ plusieurs constructeurs
+    - Pas de constructeurs $\Rightarrow$ un par défaut genere, vide
   - Reference **`this`**
-    - Chaque instance a un accès vers elle m -> `this`
+    - Chaque instance a un accès vers elle m $\rightarrow$ `this`
     - Utilisation des membres localement cachés par autre variables
     - Lisibilite
     - Return instances de sois m
-  - JAVA: Toutes classes derivent d'une autre classe -> Object
+  - JAVA: Toutes classes derivent d'une autre classe $\rightarrow$ Object
     - 2 effets de derivation
       - sous-typage
       - heritage
@@ -281,7 +291,7 @@ Point p = new Point(1.0, 0.5);
   - S’applique toujours au instances
   - cf. voir tableaux exemples
 
-  - On peut définir plusieurs méthodes ou constructeurs avec le **m nom** dans la m classe si les **args sont différents** -> **surcharge**
+  - On peut définir plusieurs méthodes ou constructeurs avec le **m nom** dans la m classe si les **args sont différents** $\rightarrow$ **surcharge**
 
     > **m effet final**
 
@@ -297,7 +307,7 @@ static type nom(parametres);
 
 - L’appel de la fonction copie les arguments
   - modification aucun effet en dehors de la fonction
-    > Exemple pas a pas -> cours p.29-34
+    > Exemple pas a pas $\rightarrow$ cours p.29-34
 
 ## Références, méthodes et mutabilité
 
@@ -309,23 +319,32 @@ static type nom(parametres);
 
 ## Visibilité et contrôle d'accès
 
+visibilite $\rightarrow$ propriété contextuel $\Rightarrow$ dépendante de l'endroit ou on se trouve. On peut voir certains attirbut a un endroit mais pas un autre
+
+Contrôle d'accès $\rightarrow$ notion fortement liée à la visibilité $\Rightarrow$ ce qui ne peut pas etre vu, ne peut pas etre directement accedé
+
 - ### Modificateurs d'accès
 
-  - Control d'accès des membres:
-    - `public` -> accès/utilisation partout
-    - `private` -> acces/utilisation uniquement par les instances de la m classe
-    - `default` -> accès/utilisation uniquement dans le m package
-    - `protected`
+  - il existe differents mots-clefs liés à la visibilité et à l'accès
+  - Control d'accès des membres en Java:
+    - `public` $\rightarrow$ accès/utilisation partout
+    - `private` $\rightarrow$ acces/utilisation uniquement par les instances de la m classe
+    - `default` $\rightarrow$ ($\iff$ aucun mot clé) accès/utilisation uniquement dans le m package
+    - `protected` $\rightarrow$ accès/utilisation uniquement dans le m package ou est definie sa classe à l'exception d'une sous-classe de la classe de l'attribut.
 
 - ### **Recommendations**
 
-  - Tout champs -> `private`
+  - Tout champs $\rightarrow$ `private`
   - Moins de méthode `public` possible
+  - Utilisation de methodes _getter_ et _setter_ pour recuperer des informations `private`
 
 ---
 
-- Accès lecture (**getter**) et écriture (**setter**) -> pratique **systématique déconseillées**:
+- Accès lecture (**getter**) et écriture (**setter**) $\rightarrow$ pratique **systématique déconseillées**:
   - Fuite des détails d'implémentation
   - Contraintes et coordination plus difficile
   - Synchronisation plus difficile
-  - // TODO: add from [why getter and setter are evil](https://web.archive.org/web/20200729073721/https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html)
+  - cf. [why getter and setter are evil](https://web.archive.org/web/20200729073721/https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html)
+- **Recommendations**:
+  - retourner des _interfaces_ $\rightarrow$ cacher les details d'implementation
+    - Plus simple a modifier si l'on decide de changer un type par exemple
