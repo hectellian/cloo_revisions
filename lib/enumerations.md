@@ -57,4 +57,4 @@ DoorState open( DoorState current ) {
 
 $\uparrow$
 
-Taken from [Ethan](https://github.com/dracoanguis/Objet-Oriente/blob/main/Preparation_Oral.md)
+Taken from [Ethan](https://github.com/dracoanguis/Objet-Oriente/blob/main/Preparation_Oral.md#enumérations)
