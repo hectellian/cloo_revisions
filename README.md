@@ -296,8 +296,8 @@ Viens alors le **principe de substitution de Liskov**:
 
 - Si **S** est une sous classe de **T** $\rightarrow$ on doit pourvoir utiliser une instasnce **S** chaque fois qu'une instance de **T** est attendue, _sans causer de problemes_
 - Pour toute sous-classe:
-  - Les pre-conditions des methodes de la super classe ne peucent eter durcies
-  - Les post-conditions des methodes de la super classe ne peuvent etre assouplies
+  - Les pre-conditions des methodes de la super classe ne peuvent eter durcies $\rightarrow$ ne peut pas rendre les conditions plus strictes
+  - Les post-conditions des methodes de la super classe ne peuvent etre assouplies $\rightarrow$ conditions plus strictes possible
   - Les invariants de la super classe doivent etre preserves tels quels
 
 Definition de Barbara Liskov:
