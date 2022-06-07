@@ -64,21 +64,21 @@ Un cercle devrait est donc un sous type de la classe Elllipse
 
 - Probleme: le cercle herite des fonctions de modification de l'Ellipse qui modifie le Cercle comme une Ellipse
 - Solutions (dans l'ordre du meilleur au pire):
-  - Pas d'heritage (immutabilite si possible)
-    - Avantage: Invariant decouples, Erreur de compilation au lieu d'exceptions, Generalisation a d'autres formes facile
-    - Desavantage: Pas de code en commun: plus de code
-  - Immutabilite
-    - Avantage: Invariants respectes, Erreur de compilation au lieu d'exceptions
-    - Desavantage: Immutable
-  - Pas de Cercle
-    - Avantages: Plus simple, Pas de surprise
-    - Desavantage: Plus de methode specialisee pour les cercles, Indistinguable a la compilation
-  - Exceptions
-    - Avantage: Invariant respecte
-    - Desavantages: Risque suplementaire d'exceptions a l'execution
-  - Changer la fonction probleme
-    - Avantage: Cerlce respecte
-    - Desavantages: la fonction ne fonction pas comme sont nom l'indique $\rightarrow$ surprise + moins d'**encapsulation**
+  - **Pas d'heritage** (immutabilite si possible)
+    - <span style="color:green">Avantage</span>: Invariant decouples, Erreur de compilation au lieu d'exceptions, Generalisation a d'autres formes facile
+    - <span style="color:red">Desavantage</span>: Pas de code en commun: plus de code
+  - **Immutabilite**
+    - <span style="color:green">Avantage</span>: Invariants respectes, Erreur de compilation au lieu d'exceptions
+    - <span style="color:red">Desavantage</span>: Immutable
+  - **Pas de Cercle**
+    - <span style="color:green">Avantage</span>: Plus simple, Pas de surprise
+    - <span style="color:red">Desavantage</span>: Plus de methode specialisee pour les cercles, Indistinguable a la compilation
+  - **Exceptions**
+    - <span style="color:green">Avantage</span>: Invariant respecte
+    - <span style="color:red">Desavantage</span>: Risque suplementaire d'exceptions a l'execution
+  - **Changer la fonction probleme**
+    - <span style="color:green">Avantage</span>: Cerlce respecte
+    - <span style="color:red">Desavantage</span>: la fonction ne fonction pas comme sont nom l'indique $\rightarrow$ surprise + moins d'**encapsulation**
 
 ## Héritage: redéfinition des méthodes
 
