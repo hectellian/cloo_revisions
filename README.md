@@ -30,4 +30,4 @@ Differents Themes:
 
 ## [Références, méthodes et mutabilité](lib/referencesMethodeMutabilite.md)
 
-## Visibilité et contrôle d'accès
+## [Visibilité et contrôle d'accès](lib/visibiliteControleAcces.md)
