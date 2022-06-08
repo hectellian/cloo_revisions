@@ -21,6 +21,7 @@ Comparator<Item> priceCmp =
 ```
 
 Il existe aussi d'autres references de fonction tel que:
+
 - reference de constructeur
   - `Foo:: new`
 - reference de méthode d'une instance
