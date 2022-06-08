@@ -1,12 +1,12 @@
 # Lambda Expressions
 
-En *java*, il existe plusieurs objets annonymes, les *Lambda Expressions* et les *Classes Annonymes*.
+En *java*, il existe plusieurs objets annonymes, les **Lambda Expressions** et les **Classes Annonymes**.
 
 Les *lambdas expressions* sont un concepte commun de l'orienté objet qui repose en vérité sur une approche plus fonctionnelle de programmation. Contrairement aux *Classes Annonymes* qui sont un spécifique *java*.
 
 ## Classes Annonymes
 
-Les *classes Annonymes* sont comme leurs noms l'indique des *classes*, celles-ci sont définie autour d'une interface. C'est-à-dire qu'il existe une *interface* qui définie les méthode nécessaire et la classe annonymes définie leur implémentation. Par exemple:
+Les *classes Annonymes* $\rightarrow$ *classes*, définie autour d'une interface. C'est-à-dire qu'il existe une *interface* qui définie les méthode nécessaire et la classe annonymes définie leur implémentation. Par exemple:
 
 ```java
 public interface Armure {
@@ -40,7 +40,8 @@ On peut voir ici que `chain_mail` et `leather_arm` sont deux *classes annonymes*
 
 Les *Expressions Lambdas* est un concepte nommé en référence au *Lambda calcul*, il s'agit d'un concept récurrent de l'orienté objets, on le voit nôtament en *python*, *java* ou encore *swift*.
 
-Le principe est simple, il s'agit d'une fonction non nommé qui peut-être passé en paramètre ou encore retouné par une autre fonction.
+Le principe est simple $\rightarrow$ fonction non nommé qui peut-être passé en paramètre ou encore retouné par une autre fonction.
+
 Par exemple en *java*:
 
 ```java

@@ -19,7 +19,7 @@
 - Plusieurs comportements -$\rightarrow$ unique symbol
   - ad-hoc $\rightarrow$ surchage
   - par sous-typage $\rightarrow$ interface
-  - par parametricite
+  - par parametricite $\rightarrow$ generics
 
 ---
 
