@@ -29,4 +29,3 @@ Lorsque l'on travail avec des objets mutable, on a tendance a faire des copies p
 Cette copie doit etre profonde
 
 Avec les objets immutables ceci n'est pas necessaire
-
