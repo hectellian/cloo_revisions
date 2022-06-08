@@ -1,8 +1,13 @@
 # Mutabilité et immutabilité
 
-**Par défaut** $\rightarrow$ tout est **mutable** [JAVA]
+La majorité des langages orienté objets ont une approche mutable, c'est-à-dire que les objets sont modifiable après intanciation. Par exemple, dans un tel langage, les variables sont de base modifiable.
 
-## Variable
+A l'inverse, dans l'approche immutable les objets ne peuvent être modifié après avoir été instancié, dans un tel langage on considère qu'il n'y a pas de variable et uniquement des constantes.
+
+## Mutabilité
+
+En *java* **par défaut** $\rightarrow$ tout est **mutable**
+Par exemple, un simple variable:
 
 ```java
 int i = 12; // mutable
