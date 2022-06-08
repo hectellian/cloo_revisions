@@ -4,12 +4,12 @@
 
 Le **polymorphisme parametrique** permet d'ecrire des structures de donnees et des fonctions qui s'appliquent a plusieur types, sans perdre la **surete de typage**
 
-- _java_ $\Rightarrow$ **Generics**
+- *java* $\Rightarrow$ **Generics**
 
 Apres avoir defini une simple classe, pendant l'appel d'une de ses methodes il est possible d'avoir un type different de celui voulu, il est donc
 necessaire de tester les instances pour etre sur d'avoir le bon type. Ceci rajoute enormement de code non necessaire et on peut ce perdre facilement.
 
-Viens alors les _generiques_ $\rightarrow$ rajoute une forme de polymorphisme par parametricite permettant d'ajouter un objet d'un certain type
+Viens alors les *generiques* $\rightarrow$ rajoute une forme de polymorphisme par parametricite permettant d'ajouter un objet d'un certain type
 
 Definition d'une classe avec un generique en Java:
 
@@ -30,7 +30,7 @@ Autre utilisation $\rightarrow$ Tableau dynamique:
 var l = new ArrayList<String>();
 ```
 
-Exemple de definition de methode generiques en _java_ :
+Exemple de definition de methode generiques en *java* :
 
 ```java
 public <T> void add(T t) { // Ajoute un element de type T
@@ -42,13 +42,13 @@ public <T> void add(T t) { // Ajoute un element de type T
 
 Attention au redefinitions de type, il est possible de redefinir un identifiant de type deja existant ce qui cacherait un type deja defini le rendant inutile.
 
-En _java_, les types sont definis par **erasure**
+En *java*, les types sont definis par **erasure**
 
 - compilateur $\rightarrow$ verifie toute contraintes liées aux types
   - types respectes $\rightarrow$ phase de typage
 - Si tout dans l'ordre $\rightarrow$ efface les generiques
   - generiques n'existent plus au **runtime**
-- Ajoute eventuellement le code necessaire (_type cast_)
+- Ajoute eventuellement le code necessaire (*type cast*)
 
 Meilleurs performances $\rightarrow$ moins de verification au **runtime**
 
@@ -58,13 +58,13 @@ La variance d'un type determine si un sous type peut etre utilise de maniere int
 
 Il est existe plusieurs types de variance:
 
-- _covariance_
-- _contravariance_
-- _invariant_ $\rightarrow$ tout ce qui n'est pas variant
+- *covariance*
+- *contravariance*
+- *invariant* $\rightarrow$ tout ce qui n'est pas variant
 
 ---
 
-L'idee de variance est assez vague sans exemple donc voyons plus en detail avec _java_
+L'idee de variance est assez vague sans exemple donc voyons plus en detail avec *java*
 
 On a que `ArrayList <: List` et `User` un type generique on a alors que User est
 
@@ -74,7 +74,7 @@ On a que `ArrayList <: List` et `User` un type generique on a alors que User est
 
 ---
 
-En _java_ $\rightarrow$ les tableaux sont covariant
+En *java* $\rightarrow$ les tableaux sont covariant
 
 - Si `A <: B` $\rightarrow$ `A[] <: B[]`
 
@@ -94,7 +94,7 @@ ne sont vrais, pour tout type `F<?>`
 
 En *java* on peut definir un groupe de generiques qui sont borne a un type donne pour expliquer des contraintes.
 
-On ajoute un mot clef `extends` au nom de la classe, on peut ajouter plusieurs types:
+- On ajoute un mot cle `extends` au nom de la classe, on peut ajouter plusieurs types:
 
 ```java
 public class Stack<T extends Number> {
@@ -111,3 +111,21 @@ Il existe la **wildcard** `?` qui permet de definir un type generique qui peut e
 ```java
 List<? extends User>
 ```
+
+- On utilise `super` pour definir un type generique qui est superieur a un type donne
+
+```java
+List<? super Admin> // Liste de n'importe quel supertype
+```
+
+Si on a `A <: B`, on va avoir une relation du type: (cf. [Liskov](subtitutionLiskov.md#variance))
+
+- `F<A> <: F<? extends B>` $\rightarrow$ *producteur* (type de retour seulement)
+- `F<B> <: F<? super A>` $\rightarrow$ *consomateur* (args seuelements)
+- `F<T>` $\rightarrow$ *producteur-consommateur* (args et retour)
+
+Mnemotechnique $\rightarrow$ **PECS** (Producer-Extends-Consumer-Super)
+
+## Resume en graphe UML
+
+![variance](img/variance.png)

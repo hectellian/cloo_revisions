@@ -21,3 +21,12 @@ final int i = 12; //immutable
 ```
 
 > Ne pourra jamais changer dans le futur
+
+## Copie Conservative
+
+Lorsque l'on travail avec des objets mutable, on a tendance a faire des copies pour eviter les effets de bord
+
+Cette copie doit etre profonde
+
+Avec les objets immutables ceci n'est pas necessaire
+
