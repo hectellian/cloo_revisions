@@ -46,3 +46,46 @@
 - _mock implementation_ ou _dommy object_ en anglais, une fausse implementation pour les tests.
 
 - ATTENTION AU EXCES
+
+--- 
+
+## Exceptions et Erreurs
+
+- **Throwable**
+  - super type de toutes les exceptions et erreurs
+- **Error**
+  - ne **doit pas** etre geree
+  - problèmes graves dus a l’env:
+    - manques de memoire
+    - bug dans la JVM
+    - etc…
+- **Exceptions**
+  - **doit** etre geree
+  - problèmes imprévisibles à gérer:
+    - problèmes d’IO
+    - time-out
+    - _thread_ interrompu
+- **RuntimeException**
+  - **peut** etre geree
+  - liés à des erreurs de programmation:
+    - dépassement de tableau
+    - arg invalide
+    - erreur de conversion
+    - etc…
+
+## Lever une exception
+
+- Pourquoi? $\rightarrow$ Anticiper un probleme
+- Java $\rightarrow$ mot cle `throw` suivi d’une instanciation de l’exception
+
+- Important de creer un gestionnaire $\rightarrow$ dependace a des choses que l'on ne peut pas controler
+
+## Problemes des exceptions
+
+- Plein de code partout pour gerer
+- Exception non attrapée $\rightarrow$ propagation et donc problemes
+- Comment faire?
+  - Utiliser exceptionnellement
+  - Anticiper le probleme
+  - Utiliser le type retour
+  - Ne pas utiliser pour la logique

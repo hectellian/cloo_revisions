@@ -86,42 +86,11 @@ Point p = new Point(1.0, 0.5);
 
 - On peut définir plusieurs méthodes ou constructeurs avec le **m nom** dans la m classe si les **args sont différents** $\rightarrow$ **surcharge**
 
-    > **m effet final**
+  > **m effet final**
 
 ---
 
-## Exceptions et Erreurs
-
-- **Throwable**
-  - super type de toutes les exceptions et erreurs
-- **Error**
-  - ne **doit pas** etre geree
-  - problèmes graves dus a l’env:
-    - manques de memoire
-    - bug dans la JVM
-    - etc…
-- **Exceptions**
-  - **doit** etre geree
-  - problèmes imprévisibles à gérer:
-    - problèmes d’IO
-    - time-out
-    - _thread_ interrompu
-- **RuntimeException**
-  - **peut** etre geree
-  - liés à des erreurs de programmation:
-    - dépassement de tableau
-    - arg invalide
-    - erreur de conversion
-    - etc…
-
-## Lever une exception
-
-- Pourquoi? $\rightarrow$ Anticiper un probleme
-- Java $\rightarrow$ mot cle `throw` suivi d’une instanciation de l’exception
-
-- Important de creer un gestionnaire $\rightarrow$ dependace a des choses que l'on ne peut pas controler
-
-## Gerer une exception (different comportements)
+## Gerer une [exception](polymorphismeInterfaces.md) (different comportements)
 
 - Terminer l'application
 - Journaliser ou notifier l'exception
@@ -134,19 +103,52 @@ Point p = new Point(1.0, 0.5);
 - **Gestionnaire d'exception Java**
 
   - 3 parties:
-  
+
     1. Tentative d'execution de code $\rightarrow$ `try`
     2. Capture d'exceptions produite $\rightarrow$ `catch`
     3. (Optionel) Code execute dans tous les cas a la fin $\rightarrow$ `finally` (toujours execute)
 
 ---
 
-## Problemes des exceptions
+## Streams
 
-- Plein de code partout pour gerer
-- Exception non attrapée $\rightarrow$ propagation et donc problemes
-- Comment faire?
-  - Utiliser exceptionnellement
-  - Anticiper le probleme
-  - Utiliser le type retour
-  - Ne pas utiliser pour la logique
+Un **Stream** $\rightarrow$ flux de données
+
+Permet de faire des opérations sur un flux de données, plus rapidement et facilement que d'utiliser une boucle
+
+Il existe 2 types d'opérations sur un flux:
+
+- **Intermediaires**:
+  - Produisent un **Stream**
+  - Generalement pareseuses (**lazy**) $\rightarrow$ effectuee que en cas de besoin
+  - Generalement _stateless_ $\rightarrow$ peuvent process chaque element sans avoir vu le suivant
+  - Peuvent court-circuiter le parcours
+  - Exemples:
+    - `limit(long n)`
+    - `skip(long n)`
+    - `map(Function<? super T, ? extends R> f)`
+    - `filter(Predicate<? super T> p)`
+- **Terminales:**
+  - Produisent une valeur ou un effet de bord
+  - Strictes (inverse de _lazy_)
+  - Peuvent court-circuiter le parcours
+  - Exemples:
+    - Predicats:
+
+Exemple en _java_:
+
+```java
+// somme des valeurs non negatives
+double sum = lines
+  .mapToDouble(Double::parseDouble)
+  .filter(x -> x > 0.0)
+  .sum();
+
+Stream<Item> items = bag.stream(); // stream of items
+```
+
+On peut eviter le **boxing** en utilisant les streams, il existe des version specialises de Stream:
+
+- `IntStream`
+- `DoubleStream`
+- `LongStream`
